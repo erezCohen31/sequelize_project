@@ -22,6 +22,6 @@ setInterval(async () => {
 }, 10000);
 
 setInterval(async () => {
-    const users = await UserActivity.findAll();
-    console.table(users.map(u => u.toJSON()));
+    const users = await UserActivity.findAll({ raw: true });
+    console.table(users);
 }, 30000);
